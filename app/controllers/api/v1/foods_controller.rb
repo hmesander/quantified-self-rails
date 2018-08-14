@@ -6,4 +6,9 @@ class Api::V1::FoodsController < ApplicationController
       render json: Food.all
     end
   end
+
+  def show
+    food = Food.find(params[:id])
+    render json: food
+  end
 end
