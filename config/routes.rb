@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'welcome_page/welcome'
+  get '/', to: 'welcome_page#welcome'
 
   namespace :api do
     namespace :v1 do
