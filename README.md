@@ -7,10 +7,10 @@
   ```shell
   git clone
   ```
-2. Navigate to the `qs-rails` directory
+2. Navigate to the `quantified-self-rails` directory
 
   ```shell
-  cd qs-rails
+  cd quantified-self-rails
   ```
 
 3. Install the dependencies
@@ -32,6 +32,7 @@
   ```shell
     rspec
   ```
+<hr>
 
 ## Running the Server Locally
 
@@ -55,8 +56,9 @@ Once the server is running, visit API endpoints in your browser:
 <hr>
 
 ## API Endpoints
+
 **Food Index**
-----
+---
   Returns all foods currently in the database or 404 if no foods exist in database.
 
 * **URL**
@@ -70,7 +72,7 @@ Once the server is running, visit API endpoints in your browser:
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content Example:** `[
+    **Content Example:** ```[
     {
         "id": 1,
         "name": "Ice cream, rich",
@@ -86,7 +88,7 @@ Once the server is running, visit API endpoints in your browser:
         "name": "Ice cream bar, chocolate covered",
         "calories": 278
     }
-  ]`
+  ]```
 
 * **Error Response:**
 
@@ -95,7 +97,7 @@ Once the server is running, visit API endpoints in your browser:
 <hr>
 
 **Show Food**
-----
+---
   Returns the food object with the specific :id you’ve passed or 404 if food is not found
 
 * **URL**
@@ -118,7 +120,7 @@ Once the server is running, visit API endpoints in your browser:
 <hr>
 
 **Create Food**
-----
+---
   Create a new food with given parameters and returns the newly created food, or returns 400 if food was not created successfully. Both name and calories are required.
 
 * **URL**
@@ -144,7 +146,7 @@ Once the server is running, visit API endpoints in your browser:
 <hr>
 
 **Update Food**
-----
+---
   Updates a food with given parameters and returns the updated food, or returns 400 if food was not updated successfully. Both name and calories are required.
 
 * **URL**
@@ -170,7 +172,7 @@ Once the server is running, visit API endpoints in your browser:
 <hr>
 
 **Delete Food**
-----
+---
   Deletes the food with the given id and returns a 204, or returns a 404 if food cannot be found.
 
 * **URL**
@@ -192,7 +194,7 @@ Once the server is running, visit API endpoints in your browser:
 <hr>
 
 **Meal Index**
-----
+---
   Returns all the meals in the database along with their associated foods.
 
 * **URL**
@@ -206,7 +208,7 @@ Once the server is running, visit API endpoints in your browser:
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content Example:** `[
+    **Content Example:** ```[
     {
         "id": 1,
         "name": "Breakfast",
@@ -291,12 +293,12 @@ Once the server is running, visit API endpoints in your browser:
             }
         ]
     }
-]`
+]```
 
 <hr>
 
 **Show Meal**
-----
+---
 Returns all the foods associated with the meal with an id specified by :meal_id or a 404 if the meal is not found
 
 * **URL**
@@ -310,7 +312,7 @@ Returns all the foods associated with the meal with an id specified by :meal_id 
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content Example:** `{
+    **Content Example:** ```{
     "id": 1,
     "name": "Breakfast",
     "foods": [
@@ -330,7 +332,7 @@ Returns all the foods associated with the meal with an id specified by :meal_id 
             "calories": 220
         }
     ]
-}`
+}```
 
 * **Error Response:**
 
@@ -339,7 +341,7 @@ Returns all the foods associated with the meal with an id specified by :meal_id 
 <hr>
 
 **Associate Food with Meal**
-----
+---
 Adds the food with :id to the meal with :meal_id and returns 201 and success message.  If either the food or meal cannot be found, returns 404.
 
 * **URL**
@@ -363,7 +365,7 @@ Adds the food with :id to the meal with :meal_id and returns 201 and success mes
 <hr>
 
 **Disassociate Food with Meal**
-----
+---
 Removes the food with :id from the meal with :meal_id and returns 200 and success message.  If either the food or meal cannot be found, returns 404.
 
 * **URL**
