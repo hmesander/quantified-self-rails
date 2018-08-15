@@ -8,22 +8,30 @@ class Api::V1::FoodsController < ApplicationController
   end
 
   def show
-    if Food.find(params[:id])
-      render json: Food.find(params[:id])
-    else
-      render status: 404
-    end
+    render json: Food.find(params[:id])
   end
 
   def create
-    food = Food.new(
-      name: params['food']['name'],
-      calories: params['food']['calories']
-    )
+    food = Food.new(name: food_params['name'], calories: food_params['calories'])
     if food.save
       render json: food
     else
       render status: 400
     end
+  end
+
+  def update
+    food = Food.find(params[:id])
+    if food.update(name: food_params['name'], calories: food_params['calories'])
+      render json: food
+    else
+      render status: 400
+    end
+  end
+
+  private
+
+  def food_params
+    params.require('food').permit('name', 'calories')
   end
 end
