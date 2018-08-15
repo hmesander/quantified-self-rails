@@ -15,9 +15,9 @@ describe 'Foods API' do
       returned = JSON.parse(response.body)
 
       expect(returned.length).to eq(3)
-      expect(returned[:id]).to eq(expected.id)
-      expect(returned[:name]).to eq('Banana')
-      expect(returned[:calories]).to eq(80)
+      expect(returned['id']).to eq(food.id)
+      expect(returned['name']).to eq('Banana')
+      expect(returned['calories']).to eq(80)
     end
   end
 end
