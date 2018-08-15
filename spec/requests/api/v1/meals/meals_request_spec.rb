@@ -46,17 +46,16 @@ describe 'Meals API' do
 
       expect(response).to have_http_status(200)
 
-      expected = [
+      expected =
         {
           id: breakfast.id,
           name: breakfast.name,
           foods: [id: food1.id, name: food1.name, calories: food1.calories]
-        },
-      ]
+        }
 
       returned = JSON.parse(response.body)
 
-      expect(returned.length).to eq(1)
+      expect(returned.length).to eq(3)
       expect(response.body).to eq(expected.to_json)
       expect(returned).to_not include(snack.id)
     end
