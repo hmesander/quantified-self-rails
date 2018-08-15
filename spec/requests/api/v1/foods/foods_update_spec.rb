@@ -33,4 +33,15 @@ describe 'Foods API' do
       expect(response).to have_http_status(400)
     end
   end
+
+  context 'User attempts to update food that does not exist' do
+    it 'sends 400 response' do
+      headers = { 'ACCEPT' => 'application/json' }
+      body = { 'food': { 'name': 'Banana', 'calories': 80 } }
+
+      patch '/api/v1/foods/1', headers: headers, params: body
+
+      expect(response).to have_http_status(404)
+    end
+  end
 end
