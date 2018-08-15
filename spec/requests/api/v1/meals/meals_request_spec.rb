@@ -60,4 +60,18 @@ describe 'Meals API' do
       expect(returned).to_not include(snack.id)
     end
   end
+
+  context 'User requests a single meal that does not exist' do
+    it 'sends a single meal and its associated foods' do
+      breakfast = Meal.create!(name: 'Breakfast')
+      food1 = breakfast.foods.create!(name: 'Banana', calories: 150)
+
+      snack = Meal.create!(name: 'Snack')
+      food2 = snack.foods.create!(name: 'Gum', calories: 400)
+
+      get '/api/v1/meals/3/foods'
+
+      expect(response).to have_http_status(404)
+    end
+  end
 end
