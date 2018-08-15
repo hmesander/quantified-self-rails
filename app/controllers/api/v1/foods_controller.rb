@@ -8,11 +8,7 @@ class Api::V1::FoodsController < ApplicationController
   end
 
   def show
-    if Food.find(params[:id])
-      render json: Food.find(params[:id])
-    else
-      render status: 404
-    end
+    render json: Food.find(params[:id])
   end
 
   def create

@@ -35,7 +35,7 @@ describe 'Foods API' do
   end
 
   context 'User attempts to update food that does not exist' do
-    it 'sends 400 response' do
+    it 'sends 404 response' do
       headers = { 'ACCEPT' => 'application/json' }
       body = { 'food': { 'name': 'Banana', 'calories': 80 } }
 
