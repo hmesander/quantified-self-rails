@@ -14,4 +14,16 @@ class Api::V1::FoodsController < ApplicationController
       render status: 404
     end
   end
+
+  def create
+    food = Food.new(
+      name: params['food']['name'],
+      calories: params['food']['calories']
+    )
+    if food.save
+      render json: food
+    else
+      render status: 400
+    end
+  end
 end
