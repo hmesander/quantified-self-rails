@@ -20,4 +20,17 @@ describe 'Foods API' do
       expect(returned['calories']).to eq(80)
     end
   end
+
+  context 'User attempts to update food with invalid parameters' do
+    it 'sends 400 response' do
+      food = create(:food)
+
+      headers = { 'ACCEPT' => 'application/json' }
+      body = { 'food': { 'name': 'Banana' } }
+
+      patch "/api/v1/foods/#{food.id}", headers: headers, params: body
+
+      expect(response).to have_http_status(400)
+    end
+  end
 end
