@@ -11,6 +11,6 @@ class Api::V1::MealFoodsController < ApplicationController
     food = Food.find(params[:id])
     meal_food = MealFood.find_by(meal: meal, food: food)
     meal_food.destroy!
-    render json: { message: "Successfully deleted #{food.name} from #{meal.name}" }, status: 204
+    render json: { message: "Successfully deleted #{food.name} from #{meal.name}" }, status: 200
   end
 end

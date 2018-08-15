@@ -11,8 +11,8 @@ describe 'Meal Foods API' do
 
       returned = JSON.parse(response.body)
 
-      expect(response).to have_http_status(204)
-      expect(returned['message']).to eq("Successfully removed #{food.name} from #{breakfast.name}")
+      expect(response).to have_http_status(200)
+      expect(returned['message']).to eq("Successfully deleted #{food.name} from #{breakfast.name}")
     end
   end
 
