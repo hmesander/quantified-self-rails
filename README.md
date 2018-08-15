@@ -72,8 +72,7 @@ Once the server is running, visit API endpoints in your browser:
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content Example:** ```javascript
-    [
+    **Content Example:** `[
     {
         "id": 1,
         "name": "Ice cream, rich",
@@ -89,7 +88,7 @@ Once the server is running, visit API endpoints in your browser:
         "name": "Ice cream bar, chocolate covered",
         "calories": 278
     }
-  ]```
+  ]`
 
 * **Error Response:**
 
@@ -209,8 +208,7 @@ Once the server is running, visit API endpoints in your browser:
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content Example:** ```javascript
-    [
+    **Content Example:** `[
     {
         "id": 1,
         "name": "Breakfast",
@@ -295,7 +293,7 @@ Once the server is running, visit API endpoints in your browser:
             }
         ]
     }
-]```
+]`
 
 <hr>
 
@@ -314,8 +312,7 @@ Returns all the foods associated with the meal with an id specified by :meal_id 
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content Example:** ```javascript
-    {
+    **Content Example:** `{
     "id": 1,
     "name": "Breakfast",
     "foods": [
@@ -335,7 +332,7 @@ Returns all the foods associated with the meal with an id specified by :meal_id 
             "calories": 220
         }
     ]
-}```
+}`
 
 * **Error Response:**
 
@@ -368,7 +365,7 @@ Adds the food with :id to the meal with :meal_id and returns 201 and success mes
 <hr>
 
 **Disassociate Food with Meal**
----
+----
 Removes the food with :id from the meal with :meal_id and returns 200 and success message.  If either the food or meal cannot be found, returns 404.
 
 * **URL**
