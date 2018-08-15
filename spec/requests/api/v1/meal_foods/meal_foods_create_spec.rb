@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Foods API' do
+describe 'Meal Foods API' do
   context 'User requests to associate a food with a meal and both exist' do
     it 'send a message and 201 response' do
       food = create(:food)
