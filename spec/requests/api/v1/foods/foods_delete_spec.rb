@@ -17,4 +17,12 @@ describe 'Foods API' do
       expect(returned.length).to eq(4)
     end
   end
+
+  context 'User attempts to delete a food that does not exist in the database' do
+    it 'returns 404 status' do
+      delete '/api/v1/foods/2'
+
+      expect(response).to have_http_status(404)
+    end
+  end
 end
