@@ -8,8 +8,10 @@ describe 'Foods API' do
 
       post "/api/v1/meals/#{breakfast.id}/foods/#{food.id}"
 
+      returned = JSON.parse(response.body)
+
       expect(response).to have_http_status(201)
-      expect(response.message).to eq("Successfully added #{food.name} to #{breakfast.name}")
+      expect(returned['message']).to eq("Successfully added #{food.name} to #{breakfast.name}")
     end
   end
 end
