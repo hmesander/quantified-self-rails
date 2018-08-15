@@ -72,7 +72,7 @@ Once the server is running, visit API endpoints in your browser:
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content Example:** ```json
+    **Content Example:** ```javascript
     [
     {
         "id": 1,
@@ -209,7 +209,7 @@ Once the server is running, visit API endpoints in your browser:
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content Example:** ```json
+    **Content Example:** ```javascript
     [
     {
         "id": 1,
@@ -314,7 +314,7 @@ Returns all the foods associated with the meal with an id specified by :meal_id 
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content Example:** ```json
+    **Content Example:** ```javascript
     {
     "id": 1,
     "name": "Breakfast",
