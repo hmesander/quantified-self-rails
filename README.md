@@ -49,9 +49,9 @@ Once the server is running, visit API endpoints in your browser:
 <hr>
 
 ## Deployments
-* Back end is deployed here: https://sheltered-shelf-21325.herokuapp.com/
+* Back end is deployed here with AWS: https://www.quantified-self-rails.com/
 
-* To see the [front end](https://github.com/hmesander/qs-frontend-starter) deployed with this app, visit https://quantified-self-rails.surge.sh/
+* To see the [front end](https://github.com/hmesander/qs-frontend-starter) deployed with Surge, visit https://quantified-self-rails.surge.sh/
 
 <hr>
 
